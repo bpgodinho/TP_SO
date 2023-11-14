@@ -7,7 +7,7 @@
 // Function to draw a frame outside a window
 void drawFrame(int height, int width, int line, int col);
 
-int main(void) {
+int main(int argc, char *argv[]) {
     int lin, col, color, exitFlag;
     WINDOW *window;
     char text[11];
@@ -46,9 +46,8 @@ int main(void) {
     keypad(window, TRUE);
     werase(window);
     wrefresh(window);
-    wprintw(window, "Use arrow keys, space, and 'q' to quit\n");
+    wprintw(window, "Use arrow keys, space, and 'q' to quit\nUsername: %s\n", argv[1]);
     wrefresh(window);
-
     exitFlag = 0;
     output = NULL;
     while (exitFlag != 1) {
@@ -77,7 +76,7 @@ int main(void) {
                     char nick[11], message[11];
                     if (sscanf(text, "msg %10s %10[^\n]", nick, message) == 2) {
                         // Handle the 'msg' command here
-                        sprintf(msg, "Sending message to %s: %s", nick, message);
+                        sprintf(msg, "Sending message to %s: %s", argv[1], message);
                         output = msg;
                     } else {
                         output = "Invalid 'msg' command format";
