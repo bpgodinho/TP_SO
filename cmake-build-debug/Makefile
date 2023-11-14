@@ -128,6 +128,30 @@ TP_SO/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\TP_SO.dir\build.make CMakeFiles/TP_SO.dir/build
 .PHONY : TP_SO/fast
 
+bot.obj: bot.c.obj
+.PHONY : bot.obj
+
+# target to build an object file
+bot.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\TP_SO.dir\build.make CMakeFiles/TP_SO.dir/bot.c.obj
+.PHONY : bot.c.obj
+
+bot.i: bot.c.i
+.PHONY : bot.i
+
+# target to preprocess a source file
+bot.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\TP_SO.dir\build.make CMakeFiles/TP_SO.dir/bot.c.i
+.PHONY : bot.c.i
+
+bot.s: bot.c.s
+.PHONY : bot.s
+
+# target to generate assembly for a file
+bot.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\TP_SO.dir\build.make CMakeFiles/TP_SO.dir/bot.c.s
+.PHONY : bot.c.s
+
 jogoUI.obj: jogoUI.c.obj
 .PHONY : jogoUI.obj
 
@@ -185,6 +209,9 @@ help:
 	@echo ... edit_cache
 	@echo ... rebuild_cache
 	@echo ... TP_SO
+	@echo ... bot.obj
+	@echo ... bot.i
+	@echo ... bot.s
 	@echo ... jogoUI.obj
 	@echo ... jogoUI.i
 	@echo ... jogoUI.s

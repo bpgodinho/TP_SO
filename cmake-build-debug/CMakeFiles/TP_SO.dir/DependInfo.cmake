@@ -8,6 +8,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
+  "C:/Users/rafae/Documents/GitHub/TP_SO/bot.c" "CMakeFiles/TP_SO.dir/bot.c.obj" "gcc" "CMakeFiles/TP_SO.dir/bot.c.obj.d"
   "C:/Users/rafae/Documents/GitHub/TP_SO/jogoUI.c" "CMakeFiles/TP_SO.dir/jogoUI.c.obj" "gcc" "CMakeFiles/TP_SO.dir/jogoUI.c.obj.d"
   "C:/Users/rafae/Documents/GitHub/TP_SO/motor.c" "CMakeFiles/TP_SO.dir/motor.c.obj" "gcc" "CMakeFiles/TP_SO.dir/motor.c.obj.d"
   )

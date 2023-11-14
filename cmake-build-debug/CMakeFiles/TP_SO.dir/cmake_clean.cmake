@@ -1,4 +1,6 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/TP_SO.dir/bot.c.obj"
+  "CMakeFiles/TP_SO.dir/bot.c.obj.d"
   "CMakeFiles/TP_SO.dir/jogoUI.c.obj"
   "CMakeFiles/TP_SO.dir/jogoUI.c.obj.d"
   "CMakeFiles/TP_SO.dir/motor.c.obj"

@@ -74,6 +74,9 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="C:/Users/rafae/Documents/GitHub/TP_SO/bot.c">
+			<Option target="TP_SO"/>
+		</Unit>
 		<Unit filename="C:/Users/rafae/Documents/GitHub/TP_SO/jogoUI.c">
 			<Option target="TP_SO"/>
 		</Unit>

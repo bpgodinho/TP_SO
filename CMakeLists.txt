@@ -6,4 +6,5 @@ set(CMAKE_C_STANDARD 11)
 add_executable(TP_SO
         motor.c
         jogoUI.c
-        jogoUI.h)
+        jogoUI.h
+        bot.c)
