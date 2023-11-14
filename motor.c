@@ -1,2 +1,2 @@
 #include <stdio.h>
-#include <ncurses/ncurses.h>
+#include <ncurses.h>
