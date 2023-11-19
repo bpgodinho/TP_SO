@@ -1,11 +1,4 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include <ncurses.h>
-#include <string.h>
-#include <time.h>
-
-// Function to draw a frame outside a window
-void drawFrame(int height, int width, int line, int col);
+#include "jogoUI.h"
 
 int main(int argc, char *argv[]) {
     int lin, col, color, exitFlag;
@@ -69,9 +62,11 @@ int main(int argc, char *argv[]) {
                     } else {
                         output = "Invalid 'msg' command format";
                     }
-                } else {
-                    output = "Unknown command";
-                }
+                } else if(strncmp(text, "exit", 4) == 0){
+                    output = "Sair";
+                }else{
+                    output ="Erro, comando desconhecido";
+                    }
                 noecho();
                 cbreak();
                 break;
