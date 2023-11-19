@@ -22,26 +22,16 @@ int main(int argc, char *argv[]) {
     noecho();
     cbreak();
 
-    init_pair(1, COLOR_RED, COLOR_BLACK);
+    init_pair(1, COLOR_WHITE, COLOR_BLACK);
     init_pair(2, COLOR_GREEN, COLOR_BLACK);
-    init_pair(3, COLOR_BLUE, COLOR_BLACK);
-    init_pair(4, COLOR_YELLOW, COLOR_BLUE);
-    init_pair(5, COLOR_YELLOW, COLOR_BLACK);
 
-    for (int i = 0; i < 125; ++i) {
-        lin = rand() % 25;
-        col = rand() % 60;
-        color = rand() % 3 + 1;
-        attron(COLOR_PAIR(color));
-        mvaddch(lin, col, 'x');
-    }
     refresh();
 
-    attron(COLOR_PAIR(5));
-    drawFrame(10, 20, 6, 15);
-    window = newwin(10, 20, 6, 15);
-    wattrset(window, COLOR_PAIR(4));
-    wbkgd(window, COLOR_PAIR(4));
+    attron(COLOR_PAIR(2));
+    drawFrame(6, 35, 6, 15);
+    window = newwin(6, 35, 6, 15);
+    wattrset(window, COLOR_PAIR(1));
+    wbkgd(window, COLOR_PAIR(1));
     scrollok(window, TRUE);
     keypad(window, TRUE);
     werase(window);
@@ -70,13 +60,11 @@ int main(int argc, char *argv[]) {
                 nocbreak();
                 wprintw(window, "Enter command: ");
                 wrefresh(window);
-                wgetstr(window, text); // Use wgetstr to read the string
+                wgetstr(window, text);
                 if (strncmp(text, "msg ", 4) == 0) {
-                    // Process the 'msg' command
                     char nick[11], message[11];
                     if (sscanf(text, "msg %10s %10[^\n]", nick, message) == 2) {
-                        // Handle the 'msg' command here
-                        sprintf(msg, "Sending message to %s: %s", argv[1], message);
+                        sprintf(msg, "Sending message to %s: %s", nick, message);
                         output = msg;
                     } else {
                         output = "Invalid 'msg' command format";

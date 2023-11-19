@@ -1,12 +1,16 @@
 #include <stdio.h>
-#include <string.h>
 #include <stdlib.h>
-#include <signal.h>
-#include <time.h>
+#include <string.h>
+#include <fcntl.h>
+#include <sys/types.h>
 #include <unistd.h>
+#include <sys/stat.h>
+#include <signal.h>
+#include <error.h>
 
 #define NCOL 40
 #define NLIN 16
+#define SERVER_FIFO "SERVERFIFO"
 
 char RUNNING = 1;
 
@@ -35,8 +39,23 @@ int main(int argc, char * argv[]) {
       sleep(interval);
       x = rand() % NCOL;
       y = rand() % NLIN;
-      printf("%d %d %d\n", x, y, duration);
-      fflush(stdout);
+      int fd = open (SERVER_FIFO,O_WRONLY);
+     if (fd == -1)
+    {
+        perror("O programa recebeMSG não está a correr ");
+        return -1;
+    }
+    int output[9];
+    char xstr[3];
+    char ystr[3];
+    char dstr[3];
+    sprintf(xstr,"%d",x);
+    sprintf(ystr,"%d",y);
+    sprintf(dstr,"%d",duration);
+    sprintf(output,"%s %s %s", xstr, ystr, dstr);
+    int size = write (fd,output, 9);
+    close(fd);
+    fflush(stdout);
    }
    return 0;
 }
